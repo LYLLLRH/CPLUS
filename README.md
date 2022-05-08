@@ -1,7 +1,7 @@
 ### C++ 题目
 
 **题目**
-![[题目.png]]
+![题目](题目.png)
 
 **解答**
 1. Excerse_1.cpp : 学生信息管理系统（顺序表）
@@ -10,7 +10,7 @@
 4. Excerse_4.cpp : 银行排队系统
 
 **运行**
-1. 首先需要安装docker，https://www.docker.com
+1. 首先需要安装docker，[Docker](//www.docker.com)
 2. 进入此项目的根目录
 3. 运行如下命令，进行编译
 ```

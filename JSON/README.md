@@ -25,10 +25,29 @@ json t;
 t["name"] = "Micheal Zhang";
 t["age"] = 20 ;
 t["sex"] = "Male";
-t["major'] = "CS";
+t["major"] = "CS";
 
 cout << t["name"] << endl;
 cout << t;
 ```
 完整的使用方法和例子，可以参考如下[网站](https://programming.vip/docs/c-json-library-nlohmann-simple-use-tutorial.html)
 
+#### 在Docker 环境中测试
+
+1. Docker 生成文件（已经生成）
+```
+FROM gcc:4.9
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+RUN gcc -o myapp -lstdc++ -std=c++11 json_exercise_1.cpp
+CMD ["./myapp"]
+```
+
+2. 在JSON目录下，运行如下命令，在本地生成Docker 镜像
+```
+docker build -t myapp:1.1 .
+```
+3. 运行如下命令，进行测试
+```
+docker run -it --rm myapp:1.1 
+```

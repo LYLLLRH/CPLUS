@@ -137,7 +137,7 @@ void searchByMajor(vector<stu> A, char major[])
 			judge = 1;
 		}
 	}
-	if (judge == 0) { cout << "找不到指定学生" << endl; }
+	if (judge == 0) { cout << "找不到指定学生,请重新输入" << endl; }
 }
 
 /// 函数名:输出向量组信息

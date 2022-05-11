@@ -28,7 +28,7 @@ docker run -it --rm --name running-app myapp:1.0
 ```
 docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o myapp -lstdc++ Exercise_1.cpp
 ```
-- "$PWD" 替换为`本地目录`的`全路径`
+- "$PWD" 替换为`本地目录`的`全路径` , 使用 `pwd` 命令获得当前目录
 - `-v` 参数把本地的目录映射到容器中：后的目录
 - `-w` 为工作目录，生成的myapp会在这个目录中
 - gcc:4.9 为在github 上的镜像
@@ -42,6 +42,12 @@ docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp  gcc:4.9 ./myapp
 ``` 
 
 这种测试方式，第三条命令就相当于一个编译的过程，可以在这个过程中测试是否存在编译错误。
+
+5. 第3步和第四步可以整合成一条命令
+```
+docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:4.9 sh -c "gcc -o myapp -lstdc++ Exercise_1.cpp ; ./myapp"
+```
+可以用任何*cpp*文件替换*Exercise_1.cpp*用于测试。 
 
 **手动测试二**
 1. 需要安装docker, [Docker](https//www.docker.com)
